@@ -1,0 +1,594 @@
+@font-face {
+    font-family: 'montserrat';
+    src: url('../Montserrat-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'montserrat';
+    color: #ffffff;
+
+}
+*::selection{
+    color: #95c11e;
+    background-color: white;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+body::-webkit-scrollbar{
+    display: block;
+    width: 5px;
+    background-color: black;
+
+}
+body::-webkit-scrollbar-thumb{
+    background-color:#95c11e;
+}
+#nav{
+    height: 100px;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    padding: 0 150px;
+    gap: 50px;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    z-index: 99;
+    /* margin-top: 10px; */
+
+}
+#nav img{
+    height: 75px;
+    width: 100px;
+    
+    
+}
+#nav h4{
+    font-weight: 500;
+}
+#cursor{
+    height: 20px;
+    width: 20px;
+    background-color:#95c11e ;
+    z-index: 99;
+    position: fixed;
+    border-radius: 50%;
+}
+#cursor-blur{
+    height: 400px;
+    width: 400px;
+    background-color:#96c11e67 ;
+    filter: blur(50px);
+    position: fixed;
+    border-radius: 50%;
+    z-index: 9;
+}
+
+video{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    object-fit: cover;
+    z-index: -1;
+
+}
+#main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.689);
+    
+
+}
+#page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 10;
+    text-align: center;
+
+}
+#page1 h1{
+    font-size: 140px;
+    font-weight: 2000;
+    position: relative;
+}
+#page1 h1::before{
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: black;
+    margin-top: -6px;
+    margin-left: -6px;
+    -webkit-text-stroke: 2px #bbfd04;
+    z-index: -1;
+}
+#page1 h2{
+    font-size: 33px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+#page1 p{
+    font-size: 15px;
+    /* font-weight: 400; */
+    width: 40%;
+}
+#page2{
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+#scroller{
+    /* background-color: red; */
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#scroller h4{
+    display: inline;
+    margin-right: 10px;
+    font-weight: 900;
+    font-size: 120px;
+    transition: all linear 0.2s;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    -webkit-text-stroke: 2px rgb(255, 255, 255);
+    color: transparent;
+}
+#scroller h4:hover{
+    color: #95c11e;
+    -webkit-text-stroke: #95c11e;
+}
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#about{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: red; */
+    height: 40vh;
+    width: 100%;
+    padding: 0 50px; 
+    position: relative;
+    z-index: 10;
+    margin-top: 100px;
+
+
+}
+#about img{
+    height: 170px;
+    width: 170px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+#about-in{
+    width: 50%;
+    text-align: center;
+}
+#about-in h3{
+    font-size: 50px;
+    font-weight:900;
+    margin-top:-70px
+
+}
+#about-in p{
+    font-size: 16px;
+    margin-top: 50px;
+    line-height: 26px;
+    font-family: sans-serif;
+    font: bold;
+    
+}
+#container{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    height: 60vh;
+    align-items: center;
+    gap: 70px;
+
+
+
+}
+.card{
+    /* background-color: blue; */
+    height: 80%;
+    width: 24%;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    position:relative;
+    z-index: 10;
+    overflow: hidden;
+    transition: all ease 0.6s;
+
+}
+#card1{
+    background-image: url(https://raw.githubusercontent.com/saarthack/sidcup-family-golf/refs/heads/main/Assests/card1.avif);
+}
+#card2{
+    background-image: url(https://raw.githubusercontent.com/saarthack/sidcup-family-golf/refs/heads/main/Assests/card2.webp);
+}
+#card3{
+    background-image: url(https://raw.githubusercontent.com/saarthack/sidcup-family-golf/refs/heads/main/Assests/card3.avif);
+}
+
+.overlay{
+    height:100%;
+    width:100%;
+    background-color: #95c11e;
+    border-radius: 20px;
+    padding:30px;
+    padding-top: 90px;
+    opacity: 0;
+    transition: all ease 0.6s;
+
+}
+.overlay h4{
+    color: black;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 900;
+    /* white-space: nowrap;  */
+    margin-bottom: 20px;
+}
+.overlay p{
+    color: black;
+    font-size: 18px;
+    font-family: sans-serif;
+}
+.card:hover .overlay{
+    opacity: 100;
+}
+.card:hover{
+    transform: rotate3d(-1,-1,0,20deg);
+}
+#green-div{
+    height: 40vh;
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    justify-content: space-between;
+    background:linear-gradient(to left bottom,rgb(28, 216, 3),#95c11e);
+
+}
+#green-div h4{
+    width: 50%;
+    /* margin-left: 100px; */
+    font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+    font-weight: 900;
+    z-index: 10;
+    color:black;
+    font-family: 'montserrat';
+    text-transform: uppercase;
+}
+#green-div img{
+    width: 15%;
+    object-fit: cover;
+    height: 100%;
+}
+#page3{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+#page3>p{
+    width: 60%;
+    text-align: center;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 50px;
+    z-index: 10;
+
+
+}
+#page3 img{
+    position: absolute;
+    height: 60px;
+}
+#page3 #colon1{
+    top: 20%;
+    left: 15%;
+
+}
+#page3 #colon2{
+    top:70%;
+    right: 15%;
+    
+}
+#page4{
+    height: 30vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:80px;
+    position: relative;
+    z-index: 10;
+   
+}
+.elem{
+    height: 70%;
+    width: 25%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+    z-index: 10;
+
+}
+.elem h2{
+    height: 100%;
+    width: 100%;
+    background-color: #95c11e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 900;
+    color: black;
+    transition: all ease 0.5s;
+    position: absolute;
+    z-index: 10;
+
+
+}
+.elem img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all ease 0.5s;
+    scale:1.1;
+    z-index: 10;
+
+}
+.elem:hover h2{
+    background-color: transparent;
+    color: white;
+}
+.elem:hover img{
+   scale:1
+}
+#page4 h1{
+    font-size: 77px;
+    -webkit-text-stroke: 2px white;
+    position: absolute;
+    top:-15%;
+    color: black;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#footer{
+    height: 40vh;
+    width: 100%;
+    margin-top:80px;
+    background:linear-gradient(to left bottom,rgb(28, 216, 3),#95c11e);
+    display: flex;
+    /* align-items: flex-start; */
+    z-index: 10;
+    position: relative;
+    /* justify-content: space-evenly; */
+    gap:50px;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+#footer img{
+    width: 15%;
+    object-fit: cover;
+    height: 100%;
+    
+}
+.head{
+    /* position: absolute; */
+    
+    height: 100%;
+    width: 20%;
+    /* border: 2px solid blue; */
+    margin-left: -100px;
+    
+    background-color: red;
+}
+#footer #head1{
+    margin-left: -150px;
+    background-color: transparent;
+    
+
+}
+#footer #head1 img{
+     height: 85px;
+    width: 110px;
+    margin-top: 100px;
+    transition: transform 0.3s ease; 
+}
+#footer #head1 img:hover{
+   transform: scale(0.9);
+}
+
+#footer #head2{
+    width: 450px;
+    background-color: transparent;
+}
+#footer #head2 #h2{
+    margin-top: 80px;
+   
+}
+#footer #head2 h1{
+    margin-top: 10px;
+    color: black;
+    font-weight: 900;
+}
+#footer #head2 h1:hover{
+    
+    color: white;
+    
+}
+
+
+
+#footer #head3{
+    width: 450px;
+    background-color: transparent;
+}
+#footer #head3 #h2{
+    margin-top: 80px;
+    margin-left: 40px;
+   
+}
+#footer #head3 h1{
+    margin-top: 10px;
+    color: black;
+    font-weight: 900;
+}
+#footer #head3 h1:hover{
+    
+    color: white;
+    
+}
+
+
+#footer #head4{
+    width: 450px;
+    background-color: transparent;
+}
+
+#footer #head4 #h3{
+    margin-top: 80px;
+   
+}
+#footer #head4 p{
+    margin-top: 10px;
+    color: black;
+    font-weight: 900;
+}
+#footer #head4 #h3 h1{
+    color: black;
+    font-size: 25px;
+}
+#footer #head4 #h3 h1:hover{
+    color: white;
+}
+/* #footer #head4 h:hover{
+    
+    color: white;
+    
+} */
+#copy{
+    height: 40px;
+    width: 100%;
+    z-index: 10;
+   
+}
+#copy p{
+    font-size: 13px;
+    font-family: sans-serif;
+    text-align: center;
+    word-spacing: 4px;
+    text-align: center;
+    margin-top: 20px;
+    z-index: 10;
+}
+
+#food{
+    height: 80vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    /* gap:100px */
+
+}
+#food #image{
+    height: 55vh;
+    width: 43%;
+    border-radius: 20px;
+    z-index: 10;
+    /* border: 3px solid red; */
+    margin-top: 60px;
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/cafe-menu-e1702553754869.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+    background-size: cover;
+    background-position: center;
+}
+#food #drink{
+    height: 60vh;
+    width: 40%;
+    border-radius: 20px;
+    /* border: 3px solid red; */
+    margin-left: 100px;
+    z-index: 10;
+    margin-top: 60px;
+}
+#food #drink h1{
+    /* text-align: center; */
+    font-size: 40px;
+    font-weight:900;
+    margin-top:70px;
+    z-index: 10;
+}
+
+#food #drink p{
+    font-size: 20px;
+    margin-top: 50px;
+    line-height: 35px;
+    z-index: 10;
+    font-family: sans-serif;
+    font: bold;
+
+}
+
+#food #btn{
+    height:   50px;
+    width: 170px;
+    background-color: black;
+    border: 3px solid #95c11e ;
+    border-radius: 50PX;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-top: 20PX;
+    font-size: 13px;
+
+}
+#food #btn:hover{
+    border: none;
+    color: black;
+    background-color: #95c11e;
+}
